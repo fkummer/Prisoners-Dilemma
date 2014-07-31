@@ -52,3 +52,13 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+
+
+*.name
+*encodings.xml
+*misc.xml
+*.iml
+*vcs.xml
+*workspace.xml
+
+
