@@ -23,3 +23,9 @@ class Prisoner:
 
     def setPrevOppMove(self, prevOppMove):
         self.prevOppMove = prevOppMove
+
+    def getPrevMove(self):
+        return self.prevMove
+
+    def getPrevOppMove(self):
+        return self.prevOppMove
