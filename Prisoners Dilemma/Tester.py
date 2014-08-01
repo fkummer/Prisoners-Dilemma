@@ -10,9 +10,10 @@ Lucifer = SatanPrisoner.SatanPrisoner()
 Ham = Hammurabbi.Hammurabbi()
 
 
-x = Game.Game(Lucifer, Ham)
-x.playRound()
-x.playRound()
-x.playRound()
-print(x.p1Score)
-print(x.p2Score)
+
+x = Game.Game(JC, Lucifer)
+
+x.playSet(100)
+
+x.playSet(500)
+
