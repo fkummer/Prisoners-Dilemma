@@ -55,3 +55,5 @@ class Game():
         print("Player 2:"+str(self.p2Score))
         self.p1Score = 0
         self.p2Score = 0
+        self.p1.reset()
+        self.p2.reset()

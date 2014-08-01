@@ -29,3 +29,7 @@ class Prisoner:
 
     def getPrevOppMove(self):
         return self.prevOppMove
+
+    def reset(self):
+        self.prevMove = -1
+        self.prevOppMove = -1

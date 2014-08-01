@@ -11,7 +11,7 @@ Ham = Hammurabbi.Hammurabbi()
 
 
 
-x = Game.Game(JC, Lucifer)
+x = Game.Game(Lucifer, Ham)
 
 x.playSet(100)
 
