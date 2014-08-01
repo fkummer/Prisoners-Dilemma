@@ -30,6 +30,12 @@ class Prisoner:
     def getPrevOppMove(self):
         return self.prevOppMove
 
+    def isFirstTurn(self):
+        if((self.prevMove == -1) and (self.prevOppMove == -1)):
+            return True
+        else:
+            return False
+
     def reset(self):
         self.prevMove = -1
         self.prevOppMove = -1
