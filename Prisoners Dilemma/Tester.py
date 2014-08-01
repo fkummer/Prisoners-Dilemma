@@ -9,6 +9,7 @@ Lucifer = SatanPrisoner.SatanPrisoner()
 
 
 x = Game.Game(JC, Lucifer)
-x.playRound()
-print(x.p1Score)
-print(x.p2Score)
+
+x.playSet(100)
+
+x.playSet(500)

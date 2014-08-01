@@ -44,3 +44,14 @@ class Game():
             self.p1Score += 0
             self.p2Score += 3
             return
+
+    def playSet(self, rounds):
+        i = 0
+        while(i < rounds):
+            self.playRound()
+            i += 1
+
+        print("Player 1:"+str(self.p1Score))
+        print("Player 2:"+str(self.p2Score))
+        self.p1Score = 0
+        self.p2Score = 0
