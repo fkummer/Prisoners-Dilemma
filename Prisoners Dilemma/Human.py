@@ -9,12 +9,14 @@ class Human(Prisoner.Prisoner):
 
     def __init__(self):
         super().__init__()
-        self.setName(input("Enter name:"))
+        self.setName("Human")
         self.setNiceMessage(self.getName()+" was nice")
         self.setMeanMessage(self.getName()+" was mean")
 
     def chooseNextMove(self):
         moved = False
+        if(self.isFirstTurn()):
+            self.setName(input("Enter name:"))
         while(not moved):
             move = input("Enter your move(N for nice/M for mean):")
             if(move.lower() == "n"):
