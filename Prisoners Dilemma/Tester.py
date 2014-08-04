@@ -6,18 +6,23 @@ import SatanPrisoner
 import Hammurabbi
 import mad
 import PokeyPrisoner
+import Doge
+import Human
 
 JC = JesusPrisoner.JesusPrisoner()
 Lucifer = SatanPrisoner.SatanPrisoner()
 Ham = Hammurabbi.Hammurabbi()
 angry = mad.MAD()
 poke = PokeyPrisoner.PokeyPrisoner()
+bloke = PokeyPrisoner.PokeyPrisoner()
+d1 = Doge.Doge()
+d2 = Doge.Doge()
+hugh = Human.Human()
 
 
 
-x = Game.Game(Ham, poke)
+x = Game.Game(JC, hugh)
 
-x.playSet(100)
+x.playSet(5)
 
-x.playSet(500)
 
