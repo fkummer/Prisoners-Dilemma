@@ -11,6 +11,7 @@ class Prisoner:
         self.prevOppMove = -1
         self.niceMessage = "I was nice"
         self.meanMessage = "I was mean"
+        self.name = "Prisoner"
 
     def getNice(self):
         return self.nice
@@ -55,3 +56,9 @@ class Prisoner:
 
     def setMeanMessage(self, message):
         self.meanMessage = message
+
+    def getName(self):
+        return self.name
+
+    def setName(self, newName):
+        self.name = newName
