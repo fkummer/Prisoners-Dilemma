@@ -16,10 +16,9 @@ class Game():
     def playRound(self):
         p1Move = self.p1.chooseNextMove();
         self.p1.setPrevMove(p1Move)
-        self.printMessage(self.p1)
-
         p2Move = self.p2.chooseNextMove();
         self.p2.setPrevMove(p2Move)
+        self.printMessage(self.p1)
         self.printMessage(self.p2)
 
         self.p1.setPrevOppMove(p2Move)
