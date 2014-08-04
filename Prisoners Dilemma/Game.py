@@ -15,10 +15,14 @@ class Game():
 
     def playRound(self):
         p1Move = self.p1.chooseNextMove();
-        p2Move = self.p2.chooseNextMove();
         self.p1.setPrevMove(p1Move)
-        self.p1.setPrevOppMove(p2Move)
+        self.printMessage(self.p1)
+
+        p2Move = self.p2.chooseNextMove();
         self.p2.setPrevMove(p2Move)
+        self.printMessage(self.p2)
+
+        self.p1.setPrevOppMove(p2Move)
         self.p2.setPrevOppMove(p1Move)
 
         #both are nice
@@ -57,3 +61,11 @@ class Game():
         self.p2Score = 0
         self.p1.reset()
         self.p2.reset()
+
+    def printMessage(self, player):
+        if(player.getPrevMove() == player.getNice()):
+            print(player.getNiceMessage())
+        elif(player.getPrevMove() == player.getMean()):
+            print(player.getMeanMessage())
+        else:
+            print("Invalid Move")

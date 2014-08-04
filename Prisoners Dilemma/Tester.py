@@ -9,6 +9,7 @@ import PokeyPrisoner
 import Doge
 import Human
 
+
 JC = JesusPrisoner.JesusPrisoner()
 Lucifer = SatanPrisoner.SatanPrisoner()
 Ham = Hammurabbi.Hammurabbi()
@@ -18,8 +19,6 @@ bloke = PokeyPrisoner.PokeyPrisoner()
 d1 = Doge.Doge()
 d2 = Doge.Doge()
 hugh = Human.Human()
-
-
 
 x = Game.Game(JC, hugh)
 
