@@ -2,9 +2,16 @@ __author__ = 'kummef'
 
 __author__ = 'kummef'
 
+
 import Prisoner
 
 class Human(Prisoner.Prisoner):
+
+    def __init__(self):
+        super().__init__()
+        self.setName(input("Enter name:"))
+        self.setNiceMessage(self.getName()+" was nice")
+        self.setMeanMessage(self.getName()+" was mean")
 
     def chooseNextMove(self):
         moved = False
