@@ -2,6 +2,8 @@ __author__ = 'kummef'
 
 class Prisoner:
 
+    #when prevMove=-1 or prevOppMove=-1 then they have yet to make their first move
+    #when both =-1 then it is the First Turn (see isFirstTurn())
     def __init__(self):
         self.nice = 0
         self.mean = 1
