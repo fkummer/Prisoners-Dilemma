@@ -63,8 +63,8 @@ class Game():
 
     def printMessage(self, player):
         if(player.getPrevMove() == player.getNice()):
-            print(player.getNiceMessage())
+            print(player.getNiceMessage()+"(Nice)")
         elif(player.getPrevMove() == player.getMean()):
-            print(player.getMeanMessage())
+            print(player.getMeanMessage()+"(Mean)")
         else:
             print("Invalid Move")
