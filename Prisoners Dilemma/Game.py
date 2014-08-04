@@ -1,6 +1,7 @@
 __author__ = 'kummef'
 
 import Prisoner
+import Human
 
 class Game():
 
@@ -12,6 +13,7 @@ class Game():
         x = Prisoner.Prisoner()
         self.nice = x.getNice()
         self.mean = x.getMean()
+        self.actionMessageOn = self.actionMessageToggle()
 
     def playRound(self):
         p1Move = self.p1.chooseNextMove();
@@ -62,9 +64,28 @@ class Game():
         self.p2.reset()
 
     def printMessage(self, player):
-        if(player.getPrevMove() == player.getNice()):
-            print(player.getNiceMessage()+"(Nice)")
-        elif(player.getPrevMove() == player.getMean()):
-            print(player.getMeanMessage()+"(Mean)")
+        if(self.actionMessageOn):
+            if(player.getPrevMove() == player.getNice()):
+                print(player.getNiceMessage()+"(Nice)")
+            elif(player.getPrevMove() == player.getMean()):
+                print(player.getMeanMessage()+"(Mean)")
+            else:
+                print("Invalid Move")
+
+    def isHuman(self):
+        if(isinstance(self.p1, Human.Human) or isinstance(self.p2, Human.Human)):
+            return True
+
+    def actionMessageToggle(self):
+        if(not self.isHuman()):
+            responded = False
+            while(not responded):
+                resp = input("Would you like to turn action messages on?(Y/N):")
+                if(resp.lower() == "y"):
+                    return True
+                elif(resp.lower() == "n"):
+                    return False
+                else:
+                    print("Please enter either Y for yes or N for no.")
         else:
-            print("Invalid Move")
+            return True

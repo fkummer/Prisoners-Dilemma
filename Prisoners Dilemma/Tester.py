@@ -20,7 +20,7 @@ d1 = Doge.Doge()
 d2 = Doge.Doge()
 hugh = Human.Human()
 
-x = Game.Game(poke, hugh)
+x = Game.Game(poke, Ham)
 
 x.playSet(5)
 
