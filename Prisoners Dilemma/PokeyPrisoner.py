@@ -2,7 +2,15 @@ __author__ = 'kummef'
 import Prisoner
 
 class PokeyPrisoner(Prisoner.Prisoner):
-    pokes = 0
+
+
+    def __init__(self):
+        super().__init__()
+        self.pokes = 0
+        self.setName("Pokey")
+        self.setNiceMessage("Hey buddy, how's it going!")
+        self.setMeanMessage("RAH I GOT YOU NOW!")
+
     def chooseNextMove(self):
         if(self.pokes < 3):
             self.pokes += 1
