@@ -9,6 +9,8 @@ class Prisoner:
         self.mean = 1
         self.prevMove = -1
         self.prevOppMove = -1
+        self.niceMessage = "I was nice"
+        self.meanMessage = "I was mean"
 
     def getNice(self):
         return self.nice
@@ -41,3 +43,15 @@ class Prisoner:
     def reset(self):
         self.prevMove = -1
         self.prevOppMove = -1
+
+    def getNiceMessage(self):
+        return self.niceMessage
+
+    def getMeanMessage(self):
+        return self.meanMessage
+
+    def setNiceMessage(self, message):
+        self.niceMessage = message
+
+    def setMeanMessage(self, message):
+        self.meanMessage = message
