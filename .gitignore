@@ -60,5 +60,5 @@ docs/_build/
 *.iml
 *vcs.xml
 *workspace.xml
-
+tester.py
 
