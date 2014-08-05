@@ -8,6 +8,7 @@ import mad
 import PokeyPrisoner
 import Doge
 import Human
+import RandomPrisoner
 
 
 JC = JesusPrisoner.JesusPrisoner()
