@@ -24,11 +24,12 @@ rando = RandomPrisoner.RandomPrisoner()
 
 x = EvolutionMode.EvolutionMode(2000)
 
-x.addSpecies(Lucifer, 1500)
-x.addSpecies(Ham, 100)
-#x.addSpecies(JC, 50)
-#x.addSpecies(rando,30)
-x.addSpecies(angry, 15)
+x.addSpecies(Lucifer, 50)
+x.addSpecies(Ham, 250)
+x.addSpecies(JC, 50)
+x.addSpecies(rando,1500)
+#x.addSpecies(angry, 15)
+x.countSpecies()
 #x.addSpecies(poke, 40)
 
 
@@ -37,7 +38,7 @@ while(i<100):
     x.generation()
     i += 1
 print(len(x.world))
-x.countSpecies()
+
 
 
 

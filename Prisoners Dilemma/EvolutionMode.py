@@ -44,6 +44,7 @@ class EvolutionMode():
         self.world = newWorld
         random.shuffle(self.world)
         self.worldTrim()
+        self.countSpecies()
 
 
 
