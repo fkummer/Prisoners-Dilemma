@@ -22,18 +22,18 @@ d2 = Doge.Doge()
 hugh = Human.Human()
 rando = RandomPrisoner.RandomPrisoner()
 
-x = EvolutionMode.EvolutionMode(1000)
+x = EvolutionMode.EvolutionMode(2000)
 
-x.addSpecies(Lucifer, 3)
-x.addSpecies(Ham, 3)
-x.addSpecies(JC, 3)
-x.addSpecies(rando,3)
-x.addSpecies(angry, 3)
-x.addSpecies(poke, 3)
+x.addSpecies(Lucifer, 1500)
+x.addSpecies(Ham, 100)
+#x.addSpecies(JC, 50)
+#x.addSpecies(rando,30)
+x.addSpecies(angry, 15)
+#x.addSpecies(poke, 40)
 
 
 i = 0
-while(i<200):
+while(i<100):
     x.generation()
     i += 1
 print(len(x.world))

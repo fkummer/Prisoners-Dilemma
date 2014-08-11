@@ -50,8 +50,8 @@ class EvolutionMode():
 
 
     def reproduce(self, game, world):
-        babies1 = int(game.p1Score/2)
-        babies2 = int(game.p2Score/2)
+        babies1 = int(game.p1Score/3)
+        babies2 = int(game.p2Score/3)
         i = 0
         j = 0
         while(i<babies1):
