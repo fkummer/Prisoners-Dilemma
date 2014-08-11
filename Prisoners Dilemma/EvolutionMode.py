@@ -25,8 +25,8 @@ class EvolutionMode():
         #the world only has enough resources to support a certain number of prisoners, the capacity, so when we reach the limit, there's a 10% die off
         if(len(self.world) >= self.capacity):
             i = 0
+            random.shuffle(self.world)
             while(i < (int)(.10*self.capacity) or len(self.world) > self.capacity):
-                random.shuffle(self.world)
                 self.world.pop()
                 i += 1
 
@@ -38,11 +38,13 @@ class EvolutionMode():
             first = self.world.pop(firstIndex)
             secondIndex = random.randint(0, len(self.world)-1)
             second = self.world.pop(secondIndex)
-            conflict = Game.Game(first, second)
+            conflict = Game.Game(first, second, True)
             conflict.playSet(5)
             newWorld = self.reproduce(conflict, newWorld)
         self.world = newWorld
         random.shuffle(self.world)
+        self.worldTrim()
+
 
 
 
@@ -55,7 +57,6 @@ class EvolutionMode():
         while(i<babies1):
             world.append(copy.copy(game.p1))
             i += 1
-            print("rawr")
         while(j<babies2):
             world.append(copy.copy(game.p2))
             j += 1

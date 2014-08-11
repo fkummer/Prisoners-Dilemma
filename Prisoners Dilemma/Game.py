@@ -5,7 +5,7 @@ import Human
 
 class Game():
 
-    def __init__(self, p1, p2):
+    def __init__(self, p1, p2, silent):
         self.p1 = p1
         self.p2 = p2
         self.p1Score = 0
@@ -13,7 +13,11 @@ class Game():
         x = Prisoner.Prisoner()
         self.nice = x.getNice()
         self.mean = x.getMean()
-        self.actionMessageOn = self.actionMessageToggle()
+        if(not silent):
+            self.actionMessageOn = self.actionMessageToggle()
+        else:
+            self.actionMessageOn = False
+
 
     def playRound(self):
         p1Move = self.p1.chooseNextMove();
@@ -51,6 +55,11 @@ class Game():
             return
 
     def playSet(self, rounds):
+        self.p1Score = 0
+        self.p2Score = 0
+        self.p1.reset()
+        self.p2.reset()
+
         i = 0
         while(i < rounds):
             self.playRound()
@@ -58,10 +67,6 @@ class Game():
 
         print("Player 1:"+str(self.p1Score))
         print("Player 2:"+str(self.p2Score))
-        self.p1Score = 0
-        self.p2Score = 0
-        self.p1.reset()
-        self.p2.reset()
 
     def printMessage(self, player):
         if(self.actionMessageOn):

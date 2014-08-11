@@ -9,6 +9,7 @@ import PokeyPrisoner
 import Doge
 import Human
 import RandomPrisoner
+import EvolutionMode
 
 JC = JesusPrisoner.JesusPrisoner()
 Lucifer = SatanPrisoner.SatanPrisoner()
@@ -21,8 +22,24 @@ d2 = Doge.Doge()
 hugh = Human.Human()
 rando = RandomPrisoner.RandomPrisoner()
 
-x = Game.Game(rando, Ham)
+x = EvolutionMode.EvolutionMode(1000)
 
-x.playSet(10)
+x.addSpecies(Ham, 3)
+x.addSpecies(JC, 3)
+x.addSpecies(Lucifer, 3)
+
+print(x.world)
+print(len(x.world))
+x.generation()
+print(len(x.world))
+print(x.world)
+x.generation()
+x.generation()
+x.generation()
+x.generation()
+x.generation()
+print(len(x.world))
+print(x.world)
+
 
 
