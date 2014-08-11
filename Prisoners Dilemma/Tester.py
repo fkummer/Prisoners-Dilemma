@@ -24,22 +24,20 @@ rando = RandomPrisoner.RandomPrisoner()
 
 x = EvolutionMode.EvolutionMode(1000)
 
+x.addSpecies(Lucifer, 3)
 x.addSpecies(Ham, 3)
 x.addSpecies(JC, 3)
-x.addSpecies(Lucifer, 3)
+x.addSpecies(rando,3)
+x.addSpecies(angry, 3)
+x.addSpecies(poke, 3)
 
-print(x.world)
+
+i = 0
+while(i<200):
+    x.generation()
+    i += 1
 print(len(x.world))
-x.generation()
-print(len(x.world))
-print(x.world)
-x.generation()
-x.generation()
-x.generation()
-x.generation()
-x.generation()
-print(len(x.world))
-print(x.world)
+x.countSpecies()
 
 
 

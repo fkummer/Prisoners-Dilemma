@@ -10,10 +10,11 @@ class Game():
         self.p2 = p2
         self.p1Score = 0
         self.p2Score = 0
+        self.silent = silent
         x = Prisoner.Prisoner()
         self.nice = x.getNice()
         self.mean = x.getMean()
-        if(not silent):
+        if(not self.silent):
             self.actionMessageOn = self.actionMessageToggle()
         else:
             self.actionMessageOn = False
@@ -65,8 +66,9 @@ class Game():
             self.playRound()
             i += 1
 
-        print("Player 1:"+str(self.p1Score))
-        print("Player 2:"+str(self.p2Score))
+        if(not self.silent):
+            print("Player 1:"+str(self.p1Score))
+            print("Player 2:"+str(self.p2Score))
 
     def printMessage(self, player):
         if(self.actionMessageOn):

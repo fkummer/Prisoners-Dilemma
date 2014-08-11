@@ -63,3 +63,11 @@ class EvolutionMode():
 
         return world
 
+    def countSpecies(self):
+        species = {}
+        for prisoners in self.world:
+            if(not prisoners.getName() in species):
+                species[prisoners.getName()] = 1
+            else:
+                species[prisoners.getName()] += 1
+        print(species)
