@@ -2,53 +2,72 @@ __author__ = 'kummef'
 
 import Prisoner
 import Human
+import random
 
 class Game():
 
-    def __init__(self, p1, p2):
+    def __init__(self, p1, p2, p3):
         self.p1 = p1
         self.p2 = p2
+        self.p3 = p3
         self.p1Score = 0
         self.p2Score = 0
+        self.p3Score = 0
         x = Prisoner.Prisoner()
         self.nice = x.getNice()
         self.mean = x.getMean()
         self.actionMessageOn = self.actionMessageToggle()
 
     def playRound(self):
-        p1Move = self.p1.chooseNextMove();
-        self.p1.setPrevMove(p1Move)
-        p2Move = self.p2.chooseNextMove();
-        self.p2.setPrevMove(p2Move)
-        self.printMessage(self.p1)
-        self.printMessage(self.p2)
+        list = [self.p1, self.p2, self.p3]
 
-        self.p1.setPrevOppMove(p2Move)
-        self.p2.setPrevOppMove(p1Move)
+        comp1 = self.p1
+        comp2 = self.p2
+
+        ind = random.randint(0,2)
+        comp1 = list[ind]
+
+        ind = random.randint(0,2)
+        comp2 = list[ind]
+
+        while (comp2 == comp1):
+            ind = random.randint(0,2)
+            comp2 = list[ind]
+
+        comp1Move = comp1.chooseNextMove()
+        comp1.setPrevMove(comp1Move)
+        comp2Move = comp2.chooseNextMove()
+        comp2.setPrevMove(comp2Move)
 
         #both are nice
-        if((p1Move == self.nice) and (p2Move == self.nice)):
-            self.p1Score += 2
-            self.p2Score += 2
-            return
+        if((comp1Move == self.nice) and (comp2Move == self.nice)):
+            comp1.score += 2
+            comp2.score += 2
+
 
         #both are mean
-        elif((p1Move == self.mean) and (p2Move == self.mean)):
-            self.p1Score += 1
-            self.p2Score += 1
-            return
+        elif((comp1Move == self.mean) and (comp2Move == self.mean)):
+            comp1.score += 1
+            comp2.score += 1
+
 
         #p1 throws p2 under the bus
-        elif((p1Move == self.mean) and (p2Move == self.nice)):
-            self.p1Score += 3
-            self.p2Score += 0
-            return
+        elif((comp1Move == self.mean) and (comp2Move == self.nice)):
+            comp1.score += 3
+            comp2.score += 0
+
 
         #p2 throws p1 under the bus
-        elif((p1Move == self.nice) and (p2Move == self.mean)):
-            self.p1Score += 0
-            self.p2Score += 3
-            return
+        elif((comp1Move == self.nice) and (comp2Move == self.mean)):
+            comp1.score += 0
+            comp2.score += 3
+
+        comp1.setPrevOppMove(comp2Move)
+        comp2.setPrevOppMove(comp1Move)
+
+        self.printMessage(comp1)
+        self.printMessage(comp2)
+        print("--------")
 
     def playSet(self, rounds):
         i = 0
@@ -56,12 +75,12 @@ class Game():
             self.playRound()
             i += 1
 
-        print("Player 1:"+str(self.p1Score))
-        print("Player 2:"+str(self.p2Score))
-        self.p1Score = 0
-        self.p2Score = 0
+        print("Player 1"+"("+self.p1.name+")"+":"+str(self.p1.score))
+        print("Player 2"+"("+self.p2.name+")"+":"+str(self.p2.score))
+        print("Player 3"+"("+self.p3.name+")"+":"+str(self.p3.score))
         self.p1.reset()
         self.p2.reset()
+        self.p3.reset()
 
     def printMessage(self, player):
         if(self.actionMessageOn):

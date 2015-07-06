@@ -12,6 +12,7 @@ class Prisoner:
         self.niceMessage = "I was nice"
         self.meanMessage = "I was mean"
         self.name = "Prisoner"
+        self.score = 0;
 
     def getNice(self):
         return self.nice

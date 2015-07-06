@@ -21,8 +21,8 @@ d2 = Doge.Doge()
 hugh = Human.Human()
 rando = RandomPrisoner.RandomPrisoner()
 
-x = Game.Game(rando, Ham)
+x = Game.Game(Lucifer, Ham, JC )
 
-x.playSet(10)
+x.playSet(10000)
 
 
